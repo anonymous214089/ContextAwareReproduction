@@ -1,0 +1,4 @@
+adb root | adb remount | adb pull /data/data/com.fsck.k9.debug/ test/
+adb root | adb remount | adb push com.fsck.k9.debug/ /data/data/
+
+
