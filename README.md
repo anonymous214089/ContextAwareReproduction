@@ -2,9 +2,9 @@
 Code and Data for the paper "Context-aware Bug Reproduction for Mobile Apps"
 
 ## 1. Introduction
-For the data used in this project, please go to the following link to download:[link](https://drive.google.com/file/d/1CUjaKigNHLSC2ZCzYuRbX4jMSZA8P_kS/view)
+For the data used in this project, please go to the following link to download:[link](https://drive.google.com/file/d/1g0t8wM0VyWB0ibmwAwkBk0HMYQNCGuYn/view)
 
-For running video recordings of ScropDroid, please go to the following link to download:
+For running video recordings of ScropDroid, please go to the following link to download:[link](https://drive.google.com/file/d/1CUjaKigNHLSC2ZCzYuRbX4jMSZA8P_kS/view)
 
 ## 2. Details of the Datasets Used in Our Experiments
 
@@ -53,3 +53,30 @@ The details of each report are as follows
 | 53     | Anki-2765       | 3        | 24         | 131            | 65     | Anki-3224       | 2        | 32         | 202            |
 | 54     | Anki-2564       | 3        | 26         | 136            | 66     | getodk-219      | 2        | 6          | 19             |
 | 55     | Anki-2681       | 3        | 29         | 164            | 67     | Anitrend-110    | 1        | 1          | 10             |
+
+## 3. How to run ScopeDroid?
+
+#### Requirements
+* Android emulator
+* Ubuntu or Windows
+* Appium Desktop Client: [link](https://github.com/appium/appium-desktop/releases/tag/v1.22.3-4)
+* Python 3.7
+  * apkutils==0.10.2
+  * Appium-Python-Client==1.3.0
+  * Levenshtein==0.18.1
+  * lxml==4.8.0
+  * opencv-python==4.5.5.64
+  * sentence-transformers==1.0.3
+  * torch==1.6.0
+  * torchvision==0.7.0
+
+#### Run ScopeDroid on apps in our experiment
+1. Download our data archive from Google Play and extract it to this directory
+2. Launch an Android emulator and connect to it via `adb`
+3. Launch the `Appium Desktop Client`
+4. In the `Main` directory, there are several scripts to run ScopeDroid:
+   * `main_recdroid.py` and `main_recdroid2.py`: run ScopeDroid on apps in the ReCDroid's dataset
+   * `main_andror2.py`: run ScopeDroid on apps in the AndroR2 dataset
+   * `main_mydata.py`: run ScopeDroid on apps in the ScopeDroid's dataset
+   * `main_eda.py`: test the robustness of ScropDroid on apps in the ReCDroid's dataset (RQ 4)
+   * To change the running app, modify the `excute_prj_idx` variable in the script.
